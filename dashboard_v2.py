@@ -10,6 +10,8 @@ if uploaded_file:
     df = pd.read_excel(uploaded_file, sheet_name="Urunler")
     df.columns = df.columns.str.strip()
 
+    col1, col2, col3, col4 = st.columns(4)
+
     col4.metric("Muhtemel Promosyon", (df["Promosyon Notu"] == "Muhtemel Promosyon").sum())
 
     st.markdown("---")
